@@ -1,86 +1,37 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+
+import styles from "./page.module.css";
+import valley from "public/img/featured/valley.jpg";
+import cliff from "public/img/featured/cliff.jpg";
+import falls from "public/img/featured/falls.jpg";
+import ice from "public/img/featured/ice.jpg";
+import lake from "public/img/featured/lake.jpg";
+import lavender from "public/img/featured/lavender.jpg";
+import magenta from "public/img/featured/magenta.jpg";
+import meadow from "public/img/featured/meadow.jpg";
+import road from "public/img/featured/road.jpg";
+import sunrise from "public/img/featured/sunrise.jpg";
+import trees from "public/img/featured/trees.jpg";
+
+import { HighlightImage } from "./components/HighlightImage";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <span>+</span>
-        <Image
-          src="/amplify.svg"
-          alt="Amplify Logo"
-          width={45}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://docs.amplify.aws/gen2/"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Review documentation for Amplify's code-first DX (Gen 2).</p>
-        </a>
-
-        <a
-          href="https://docs.amplify.aws/gen2/start/quickstart/"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Quickstart <span>-&gt;</span>
-          </h2>
-          <p>Follow a tutorial to build a fullstack app with Amplify Gen 2.</p>
-        </a>
-
-        <a
-          href="https://docs.amplify.aws/gen2/build-a-backend/auth/set-up-auth/"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Auth <span>-&gt;</span>
-          </h2>
-          <p>Zero-config Auth UI components with social sign-in and MFA.</p>
-        </a>
-
-        <a
-          href="https://docs.amplify.aws/gen2/build-a-backend/data/set-up-data/"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Data <span>-&gt;</span>
-          </h2>
-          <p>
-            Fully-typed real-time API with NoSQL database.
-          </p>
-        </a>
+      <h1 className="mb-10 text-3xl">Welcome to the Natural Collection</h1>
+      <div>
+        <HighlightImage src={valley} alt="Valley" width={600} />
+        <HighlightImage src={cliff} alt="Cliff" width={600} />
+        <HighlightImage src={falls} alt="Falls" width={600} />
+        <HighlightImage src={ice} alt="Ice" width={600} />
+        <HighlightImage src={lake} alt="Lake" width={600} />
+        <HighlightImage src={lavender} alt="Lavender" width={600} />
+        <HighlightImage src={magenta} alt="Magenta" width={600} />
+        <HighlightImage src={meadow} alt="Meadow" width={600} />
+        <HighlightImage src={road} alt="Road" width={600} />
+        <HighlightImage src={sunrise} alt="Sunrise" width={600} />
+        <HighlightImage src={trees} alt="Trees" width={600} />
       </div>
     </main>
-  )
+  );
 }
