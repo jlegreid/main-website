@@ -1,9 +1,21 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Inria_Serif } from "next/font/google";
 import "./globals.css";
 import "./output.css";
+import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+  variable: "--font-inter",
+});
+
+const inriaSerif = Inria_Serif({
+  subsets: ["latin"],
+  weight: ["300", "700"],
+  variable: "--font-inria-serif",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,11 +25,15 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  readonly children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${inter.variable} ${inriaSerif.variable}`}>
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
